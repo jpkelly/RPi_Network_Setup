@@ -82,69 +82,78 @@ rsn_pairwise=CCMP
 _______________________________________________________________________
 
 ## PUT THE FOLLOWING IN  /etc/default/hostapd
-
+```
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
-
+```
 _______________________________________________________________________
 
 ## PUT (ONLY) THE FOLLOWING IN  /etc/dnsmasq.conf
-
+```
 interface=wlan0      # Use the require wireless interface - usually wlan0
 dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+```
 
 _______________________________________________________________________
 
 ## RUN
-
+```
 sudo systemctl unmask hostapd.service
 sudo systemctl enable hostapd.service
+```
 
 _______________________________________________________________________
 
 ## RUN THE  FOLLOWING
-
+```
 sudo iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 
 sudo rfkill unblock 0
+```
 
 _______________________________________________________________________
 
 ## UNCOMMENT THE FOLLOWING IN /etc/sysctl.conf
-
+```
 #net.ipv4.ip_forward=1
+```
 
 ## RUN
+```
 iptables -t nat -A POSTROUTING -j MASQUERADE
 
 sudo service dnsmasq restart
 sudo service hostapd restart
+```
 
 _______________________________________________________________________
 
 ## INSTALL
-
+```
 sudo apt install hostapd bridge-utils
+```
 
 _______________________________________________________________________
 
 ## CHECK IF WORKING
+```
 sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
 
 sudo service dnsmasq status
 sudo service hostapd status
-
+```
 
 
 
 _______________________________________________________________________
 _______________________________________________________________________
-## OTHER SETUP
+# OTHER SETUP
 _______________________________________________________________________
 _______________________________________________________________________
 
-Put following in .vimrc:
+## Put following in .vimrc:
+```
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -155,5 +164,6 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
-
+```
+From
 https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
