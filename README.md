@@ -2,9 +2,10 @@
 from https://www.raspberrypi.org/forums/viewtopic.php?t=191453
 _______________________________________________________________________
 
-INSTALL dnsmasq hostapd
+## INSTALL dnsmasq hostapd
+```
 sudo apt-get install dnsmasq hostapd
-
+```
 _______________________________________________________________________
 
 ## ADD TO /etc/dhcpcd.conf
