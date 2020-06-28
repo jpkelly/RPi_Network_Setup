@@ -1,5 +1,6 @@
 # RPI NETWORKING SET UP 
 With dnsmasq, hostapd, fall back to a static IP if DHCP fails.
+
 From https://www.raspberrypi.org/forums/viewtopic.php?t=191453
 
 _______________________________________________________________________
