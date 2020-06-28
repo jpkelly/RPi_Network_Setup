@@ -11,12 +11,15 @@ _______________________________________________________________________
 
 ## It is possible to fall back to a static IP if DHCP fails:
 ## define static profile
+```
 profile static_eth0
 static ip_address=192.168.0.199/24
 static routers=192.168.0.1
 static domain_name_servers=8.8.8.8
+```
 
 ## fallback to static profile on eth0
+```
 interface eth0
 fallback static_eth0
 
@@ -24,22 +27,27 @@ interface wlan0
 static ip_address=192.168.4.1/24
 static routers=192.168.4.1
 static domain_name_servers=8.8.8.8
+```
 
 _______________________________________________________________________
 
 ## PUT IN /etc/hostapd/hostapd.conf
 
 ### This is the name of the WiFi interface
+```
 interface=wlan0
+```
 
 ### Use the nl80211 driver with the brcmfmac driver
+```
 driver=nl80211
+```
 
 ### This is the name of the network
-ssid=yuzuAP
+`ssid=yuzuAP`
 
 ### Use the 2.4GHz band
-hw_mode=g
+`hw_mode=g`
 
 ### Use channel 4
 channel=4
