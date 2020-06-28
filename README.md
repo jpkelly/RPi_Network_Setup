@@ -10,17 +10,16 @@ _______________________________________________________________________
 
 ## ADD TO /etc/dhcpcd.conf
 
-## It is possible to fall back to a static IP if DHCP fails:
-## define static profile
 ```
+# It is possible to fall back to a static IP if DHCP fails:
+# define static profile
 profile static_eth0
 static ip_address=192.168.0.199/24
 static routers=192.168.0.1
 static domain_name_servers=8.8.8.8
-```
 
-## fallback to static profile on eth0
-```
+
+# fallback to static profile on eth0
 interface eth0
 fallback static_eth0
 
