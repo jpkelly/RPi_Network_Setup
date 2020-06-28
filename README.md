@@ -117,7 +117,7 @@ sudo rfkill unblock 0
 
 ## RUN
 ```
-iptables -t nat -A POSTROUTING -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
 
 sudo service dnsmasq restart
 sudo service hostapd restart
