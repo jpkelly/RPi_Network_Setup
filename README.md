@@ -49,7 +49,7 @@ hw_mode=g
 # Use channel 4
 channel=4
 
-# Enable 802.11n
+# Enable 802.11n (if supported by Pi model)
 ieee80211n=1
 
 # Enable WMM
