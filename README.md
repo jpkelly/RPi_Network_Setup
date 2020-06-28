@@ -1,5 +1,5 @@
 # RPI NETWORKING SET UP 
-from https://www.raspberrypi.org/forums/viewtopic.php?t=191453
+From https://www.raspberrypi.org/forums/viewtopic.php?t=191453
 _______________________________________________________________________
 
 ## INSTALL dnsmasq hostapd
