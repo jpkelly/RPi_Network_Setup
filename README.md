@@ -27,51 +27,51 @@ static domain_name_servers=8.8.8.8
 
 _______________________________________________________________________
 
-# PUT IN /etc/hostapd/hostapd.conf
+## PUT IN /etc/hostapd/hostapd.conf
 
-## This is the name of the WiFi interface
+### This is the name of the WiFi interface
 interface=wlan0
 
-## Use the nl80211 driver with the brcmfmac driver
+### Use the nl80211 driver with the brcmfmac driver
 driver=nl80211
 
-## This is the name of the network
+### This is the name of the network
 ssid=yuzuAP
 
-## Use the 2.4GHz band
+### Use the 2.4GHz band
 hw_mode=g
 
-## Use channel 4
+### Use channel 4
 channel=4
 
-## Enable 802.11n
+### Enable 802.11n
 ieee80211n=1
 
-## Enable WMM
+### Enable WMM
 wmm_enabled=1
 
-## Enable 40MHz channels with 20ns guard interval
+### Enable 40MHz channels with 20ns guard interval
 ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
 
-## Accept all MAC addresses
+### Accept all MAC addresses
 macaddr_acl=0
 
-## Use WPA authentication
+### Use WPA authentication
 auth_algs=1
 
-## Require clients to know the network name
+### Require clients to know the network name
 ignore_broadcast_ssid=0
 
-## Use WPA2
+### Use WPA2
 wpa=2
 
-## Use a pre-shared key
+### Use a pre-shared key
 wpa_key_mgmt=WPA-PSK
 
-## The network passphrase
+### The network passphrase
 wpa_passphrase=myverysecurepassphrase
 
-## Use AES, instead of TKIP
+### Use AES, instead of TKIP
 rsn_pairwise=CCMP
 
 _______________________________________________________________________
