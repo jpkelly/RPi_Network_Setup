@@ -10,7 +10,7 @@ _______________________________________________________________________
 sudo apt-get install dnsmasq hostapd
 ```
 
-## ADD TO /etc/dhcpcd.conf
+## ADD TO `/etc/dhcpcd.conf`
 
 ```
 # It is possible to fall back to a static IP if DHCP fails:
