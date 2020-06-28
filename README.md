@@ -6,7 +6,6 @@ _______________________________________________________________________
 ```
 sudo apt-get install dnsmasq hostapd
 ```
-_______________________________________________________________________
 
 ## ADD TO /etc/dhcpcd.conf
 
@@ -29,7 +28,6 @@ static routers=192.168.4.1
 static domain_name_servers=8.8.8.8
 ```
 
-_______________________________________________________________________
 
 ## PUT IN /etc/hostapd/hostapd.conf
 ```
@@ -79,13 +77,11 @@ wpa_passphrase=myverysecurepassphrase
 rsn_pairwise=CCMP
 ```
 
-_______________________________________________________________________
 
 ## PUT THE FOLLOWING IN  /etc/default/hostapd
 ```
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
-_______________________________________________________________________
 
 ## PUT (ONLY) THE FOLLOWING IN  /etc/dnsmasq.conf
 ```
@@ -93,7 +89,6 @@ interface=wlan0      # Use the require wireless interface - usually wlan0
 dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
 ```
 
-_______________________________________________________________________
 
 ## RUN
 ```
@@ -101,7 +96,6 @@ sudo systemctl unmask hostapd.service
 sudo systemctl enable hostapd.service
 ```
 
-_______________________________________________________________________
 
 ## RUN THE  FOLLOWING
 ```
@@ -112,7 +106,6 @@ sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 sudo rfkill unblock 0
 ```
 
-_______________________________________________________________________
 
 ## UNCOMMENT THE FOLLOWING IN /etc/sysctl.conf
 ```
@@ -127,14 +120,12 @@ sudo service dnsmasq restart
 sudo service hostapd restart
 ```
 
-_______________________________________________________________________
 
 ## INSTALL
 ```
 sudo apt install hostapd bridge-utils
 ```
 
-_______________________________________________________________________
 
 ## CHECK IF WORKING
 ```
@@ -144,13 +135,9 @@ sudo service dnsmasq status
 sudo service hostapd status
 ```
 
-
-
 _______________________________________________________________________
-_______________________________________________________________________
+
 # OTHER SETUP
-_______________________________________________________________________
-_______________________________________________________________________
 
 ## Put following in .vimrc:
 ```
